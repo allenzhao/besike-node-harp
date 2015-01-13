@@ -6,4 +6,4 @@ var port = parseArgs.port || 4000;
 var root = parseArgs._[0] || process.cwd();
 var app = createMiniHarp(root);
 app.listen(port);
-console.log("App start listening on port " + root);
+console.log("App start listening on port " + port);
