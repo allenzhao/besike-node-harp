@@ -1,6 +1,9 @@
-var miniharp = function() {
+var miniharp = function(root) {
   var connect = require('connect');
-  return connect();
+  var serveStatic = require('serve-static');
+  var mHarp = connect();
+  mHarp.use(serveStatic(root));
+  return mHarp;
 }
 
 module.exports = miniharp;
