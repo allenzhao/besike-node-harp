@@ -5,4 +5,10 @@ var app = createMiniHarp();
 var parseArgs = minimist(process.argv.slice(2));
 var port = parseArgs.port || 4000;
 app.listen(port);
+app.use(function(req, res, next){
+  if (req.url == '/current-time'){
+    res.end((new Date()).toISOString());
+  }
+  next();
+});
 console.log("App start listening on port " + port);
